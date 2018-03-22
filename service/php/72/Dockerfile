@@ -20,9 +20,9 @@ RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIME_ZONE /etc/localtime && echo $CON
 RUN apt-get install -y --no-install-recommends libpng-dev libjpeg-dev libxml2-dev libjpeg62-turbo-dev libfreetype6-dev cron vim unzip git wget iputils-ping curl 
 
 # PHP扩展安装
-RUN docker-php-ext-configure gd --with-freetype-dir --with-jpeg-di
+RUN docker-php-ext-configure gd --with-freetype-dir --with-jpeg-dir
 RUN docker-php-ext-install gd pdo pdo_mysql mysqli soap exif
-# 下载地址 https://redis.io/download
+# 下载地址 https://pecl.php.net/package/redis
 COPY redis-4.0.0.tgz /home/redis.tgz
 RUN pecl install /home/redis.tgz && docker-php-ext-enable redis
 
