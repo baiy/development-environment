@@ -13,6 +13,9 @@ services:
       - "${NGINX_HTTPS_HOST_PORT}:443"
     links:
      - "php72"
+     - "php56"
+     - "mysql57"
+     - "redis"
     volumes:
       - ${NGINX_DIR}nginx.conf:/etc/nginx/nginx.conf
       - ${APPLICATION_DIR}:/etc/nginx/html/
@@ -29,14 +32,26 @@ services:
     privileged: true
     ports:
       - "9072:9000"
-    links:
-      - "mysql57"
-      - "redis"
     volumes:
       - ${APPLICATION_DIR}:/etc/nginx/html/
       - ${PHP_DIR}72/php.ini:/usr/local/etc/php/php.ini
       - ${PHP_DIR}72/php-fpm.conf:/usr/local/etc/php-fpm.conf
       - ${PHP_DIR}72/log/:/var/log/
+
+  php56:
+    build:
+      context: ./service/php/56
+      args:
+        CONTAINER_TIME_ZONE: ${CONTAINER_TIME_ZONE}
+        CONTAINER_CHANGE_SOURCE: ${CONTAINER_CHANGE_SOURCE}
+    privileged: true
+    ports:
+      - "9056:9000"
+    volumes:
+      - ${APPLICATION_DIR}:/etc/nginx/html/
+      - ${PHP_DIR}56/php.ini:/usr/local/etc/php/php.ini
+      - ${PHP_DIR}56/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ${PHP_DIR}56/log/:/var/log/
 
   mysql57:
     build:

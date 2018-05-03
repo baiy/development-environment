@@ -66,25 +66,25 @@ a.arrow:hover {color:#ff0000;text-decoration:none;}
 <td class="er">服务器端口</td>
 <td class="fl"><?=_SERVER('SERVER_ADDR').':'._SERVER('SERVER_PORT')?></td>
 <td class="er">SQLite Client组件</td>
-<td class="fc"><?=phpversion('pdo_sqlite') ? YES : NO ?></td>   
+<td class="fc"><?=phpversion('pdo_sqlite') ? YES : NO ?></td>
 </tr>
 <tr>
 <td class="er">服务器环境</td>
 <td class="fl"><?=stripos(_SERVER('SERVER_SOFTWARE'), 'PHP')?_SERVER('SERVER_SOFTWARE'):_SERVER('SERVER_SOFTWARE')?></td>
 <td class="er">GD library组件</td>
-<td class="fc"><?=function_exists('gd_info') ? YES : NO ?></td>    
+<td class="fc"><?=function_exists('gd_info') ? YES : NO ?></td>
 </tr>
 <tr>
 <td class="er">PHP运行环境</td>
 <td class="fl"><?=PHP_SAPI .' PHP/'.PHP_VERSION?></td>
 <td class="er">EXIF信息查看组件</td>
-<td class="fc"><?=phpversion('exif') ? YES : NO ?></td>   
+<td class="fc"><?=phpversion('exif') ? YES : NO ?></td>
 </tr>
 <tr>
 <td class="er">PHP配置文件</td>
 <td class="fl"><?=$Info['php_ini_file']?></td>
 <td class="er">OpenSSL协议组件</td>
-<td class="fc"><?=function_exists('openssl_open') ? YES : NO ?></td>   
+<td class="fc"><?=function_exists('openssl_open') ? YES : NO ?></td>
 </tr>
 <tr>
 <td class="er">当前网站目录</td>
@@ -98,7 +98,11 @@ a.arrow:hover {color:#ff0000;text-decoration:none;}
 <?=gmdate('Y-m-d H:i:s', time() + 3600 * 8)?>
 </td>
 <td class="er" >详细信息</td>
-<td class="fc"><a target="_blank" href='<?=htmlentities($_SERVER['PHP_SELF'])?>?act=phpinfo'>phpinfo()</a></td>
+<td class="fc">
+    <a href='<?=htmlentities($_SERVER['PHP_SELF'])?>?act=phpinfo'>phpinfo()</a>
+    <a href='http://php72.127.baiy.org'>72</a>
+    <a href='http://php56.127.baiy.org'>56</a>
+</td>
 </tr>
 </table>
 <table width="100%" class="inp">
