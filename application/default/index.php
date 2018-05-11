@@ -100,8 +100,8 @@ a.arrow:hover {color:#ff0000;text-decoration:none;}
 <td class="er" >详细信息</td>
 <td class="fc">
     <a href='<?=htmlentities($_SERVER['PHP_SELF'])?>?act=phpinfo'>phpinfo()</a>
-    <a href='http://php72.127.baiy.org'>72</a>
-    <a href='http://php56.127.baiy.org'>56</a>
+    <a href='http://72.php.localtest.me'>72</a>
+    <a href='http://56.php.localtest.me'>56</a>
 </td>
 </tr>
 </table>
