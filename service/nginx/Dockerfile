@@ -1,4 +1,4 @@
-FROM nginx:1.12.2
+FROM nginx:stable
 
 ARG CONTAINER_CHANGE_SOURCE=false
 
