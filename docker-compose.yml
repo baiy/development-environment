@@ -80,3 +80,16 @@ services:
     volumes:
       - ${REDIS_DIR}/redis.conf:/usr/local/etc/redis/redis.conf
       - ${REDIS_DATA_DIR}:/data
+
+  anyproxy:
+      build:
+        context: ./service/anyproxy
+        args:
+          CONTAINER_TIME_ZONE: ${CONTAINER_TIME_ZONE}
+          CONTAINER_CHANGE_SOURCE: ${CONTAINER_CHANGE_SOURCE}
+      privileged: true
+      ports:
+        - "8001:8001"
+        - "8002:8002"
+      volumes:
+        - ${ANYPROXY_RULE_DIR}/:/anyproxy/

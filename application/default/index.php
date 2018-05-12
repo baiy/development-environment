@@ -89,8 +89,8 @@ a.arrow:hover {color:#ff0000;text-decoration:none;}
 <tr>
 <td class="er">当前网站目录</td>
 <td class="fl"><?=_SERVER('DOCUMENT_ROOT')?></td>
-<td class="er">SendMail电子邮件支持</td>
-<td class="fc"><?=phpversion('standard') ? YES : NO ?></td>
+<td class="er">常用工具</td>
+<td class="fc"><a href="http://anyproxy.localtest.me:8002" target="_blank">抓包代理</a></td>
 </tr>
 <tr>
 <td class="er">服务器标准时</td>
