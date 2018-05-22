@@ -22,6 +22,7 @@ RUN apt-get install -y --no-install-recommends libpng-dev libjpeg-dev libxml2-de
 # PHP扩展安装
 RUN docker-php-ext-configure gd --with-freetype-dir --with-jpeg-dir
 RUN docker-php-ext-install gd pdo pdo_mysql mysqli soap exif
-# 下载地址 https://pecl.php.net/package/redis
-COPY redis-4.0.0.tgz /home/redis.tgz
+
+# redis
+RUN curl https://pecl.php.net/get/redis > /home/redis.tgz
 RUN pecl install /home/redis.tgz && docker-php-ext-enable redis
