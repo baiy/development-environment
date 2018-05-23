@@ -14,8 +14,6 @@ services:
     links:
      - "php72"
      - "php56"
-     - "mysql57"
-     - "redis"
     volumes:
       - ${NGINX_DIR}nginx.conf:/etc/nginx/nginx.conf
       - ${APPLICATION_DIR}:/etc/nginx/html/
