@@ -24,5 +24,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir --with-jpeg-dir
 RUN docker-php-ext-install gd pdo pdo_mysql mysqli soap exif
 
 # redis
-RUN curl https://pecl.php.net/get/redis > /home/redis.tgz
-RUN pecl install /home/redis.tgz && docker-php-ext-enable redis
+RUN pecl install redis && docker-php-ext-enable redis
+
+# xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
