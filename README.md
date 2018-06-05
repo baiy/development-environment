@@ -17,8 +17,8 @@ docker-compose up -d
 > 等待安装结束
 
 ## 相关地址
-* nginx:http://localtest.me/
-* php 7.2:http://72.php.localtest.me/
-* php 5.6:http://56.php.localtest.me/
-* anyproxy监控页面:http://anyproxy.localtest.me:8002/
+* nginx:http://127.baiy.org/
+* php 7.2:http://72.php.127.baiy.org/
+* php 5.6:http://56.php.127.baiy.org/
+* anyproxy监控页面:http://anyproxy.127.baiy.org:8002/
 * mysql: 127.0.0.1:3306  root root

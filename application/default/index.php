@@ -90,7 +90,7 @@ a.arrow:hover {color:#ff0000;text-decoration:none;}
 <td class="er">当前网站目录</td>
 <td class="fl"><?=_SERVER('DOCUMENT_ROOT')?></td>
 <td class="er">常用工具</td>
-<td class="fc"><a href="http://anyproxy.localtest.me:8002" target="_blank">抓包代理</a></td>
+<td class="fc"><a href="http://anyproxy.127.baiy.org:8002" target="_blank">抓包代理</a></td>
 </tr>
 <tr>
 <td class="er">服务器标准时</td>
@@ -100,8 +100,8 @@ a.arrow:hover {color:#ff0000;text-decoration:none;}
 <td class="er" >详细信息</td>
 <td class="fc">
     <a href='<?=htmlentities($_SERVER['PHP_SELF'])?>?act=phpinfo'>phpinfo()</a>
-    <a href='http://72.php.localtest.me'>72</a>
-    <a href='http://56.php.localtest.me'>56</a>
+    <a href='http://72.php.127.baiy.org'>72</a>
+    <a href='http://56.php.127.baiy.org'>56</a>
 </td>
 </tr>
 </table>
