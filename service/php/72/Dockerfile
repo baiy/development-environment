@@ -28,3 +28,8 @@ RUN pecl install redis && docker-php-ext-enable redis
 
 # xdebug
 RUN pecl install xdebug && docker-php-ext-enable xdebug
+
+# composer
+RUN curl -l https://getcomposer.org/composer.phar -o /usr/local/bin/composer
+RUN chmod +x /usr/local/bin/composer
+RUN composer config -g repo.packagist composer https://packagist.phpcomposer.com
