@@ -22,3 +22,9 @@ docker-compose up -d
 * php 5.6:http://56.php.127.baiy.org/
 * anyproxy监控页面:http://anyproxy.127.baiy.org:8002/
 * mysql: 127.0.0.1:3306  root root
+
+## 其他
+进入容器
+```
+docker-compose exec php72 /bin/bash
+```
