@@ -1,4 +1,4 @@
-FROM redis:4.0
+FROM redis:latest
 
 ARG CONTAINER_CHANGE_SOURCE=false
 
