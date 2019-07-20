@@ -12,8 +12,8 @@ services:
       - "${NGINX_HTTP_HOST_PORT}:80"
       - "${NGINX_HTTPS_HOST_PORT}:443"
     links:
-     - "php72"
-     - "php56"
+      - "php72"
+      - "php56"
     volumes:
       - ${NGINX_DIR}nginx.conf:/etc/nginx/nginx.conf
       - ${APPLICATION_DIR}:/etc/nginx/html/
@@ -76,18 +76,31 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - ${REDIS_DIR}/redis.conf:/usr/local/etc/redis/redis.conf
+      - ${REDIS_DIR}redis.conf:/usr/local/etc/redis/redis.conf
       - ${REDIS_DATA_DIR}:/data
 
   anyproxy:
-      build:
-        context: ./service/anyproxy
-        args:
-          CONTAINER_TIME_ZONE: ${CONTAINER_TIME_ZONE}
-          CONTAINER_CHANGE_SOURCE: ${CONTAINER_CHANGE_SOURCE}
-      privileged: true
-      ports:
-        - "8001:8001"
-        - "8002:8002"
-      volumes:
-        - ${ANYPROXY_RULE_DIR}/:/anyproxy/
+    build:
+      context: ./service/anyproxy
+      args:
+        CONTAINER_TIME_ZONE: ${CONTAINER_TIME_ZONE}
+        CONTAINER_CHANGE_SOURCE: ${CONTAINER_CHANGE_SOURCE}
+    privileged: true
+    ports:
+      - "8001:8001"
+      - "8002:8002"
+    volumes:
+      - ${ANYPROXY_RULE_DIR}:/anyproxy/
+
+  grafana:
+    build:
+      context: ./service/grafana
+      args:
+        CONTAINER_TIME_ZONE: ${CONTAINER_TIME_ZONE}
+        CONTAINER_CHANGE_SOURCE: ${CONTAINER_CHANGE_SOURCE}
+    privileged: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${GRAFANA_DATA_DIR}:/var/lib/grafana
+      - ${GRAFANA_DIR}custom.ini:/etc/grafana/grafana.ini
