@@ -14,6 +14,15 @@ services:
       - ${DATA_DIR}nginx/conf.d/:/etc/nginx/conf.d/
       - ${DATA_DIR}logstash/data/nginx:/var/log/nginx/
 
+  openvpn:
+    build:
+        context: ./service/openvpn
+    privileged: true
+    ports:
+      - "${OPENVPN_SOCKS5_PROXY_PORT}:1080"
+    volumes:
+      - ${DATA_DIR}openvpn/:/vpn/
+
   mysql57:
     build:
       context: ./service/mysql/57
