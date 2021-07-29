@@ -56,7 +56,8 @@ services:
       - "8001:8001"
       - "8002:8002"
     volumes:
-      - ${ANYPROXY_RULE_DIR}:/anyproxy/
+      - ${ANYPROXY_RULE_DIR}relu/:/anyproxy/
+      - ${ANYPROXY_RULE_DIR}certificates/:/root/.anyproxy/certificates/
 
   grafana:
     build:
